@@ -365,8 +365,10 @@ input[type="checkbox" i] {
   }
 
   .task-list {
+    max-width: 100%;
     width: 100%;
     margin-top: 1rem;
+    align-self: center;
   }
 
   .filters {
@@ -440,3 +442,4 @@ input[type="checkbox" i] {
     font-size: 1rem;
   }
 }
+
