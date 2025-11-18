@@ -1,226 +1,442 @@
+body {
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
+
 .profile-container {
-  min-height: 100vh;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+span {
+  border: 1px solid #2b3550;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: #57617a;
 }
 
-.profile-card {
-  background: white;
-  border-radius: 20px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 480px;
-  backdrop-filter: blur(10px);
-}
-
-.profile-header {
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.profile-avatar {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 32px;
-  font-weight: bold;
-  color: white;
-  margin: 0 auto 15px;
-  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
-}
-
-.profile-title {
-  color: #2d3748;
-  font-size: 28px;
-  font-weight: 700;
-  margin: 0;
-}
-
-.profile-info {
-  margin-top: 4px;
-  margin-bottom: 30px;
-}
-
-.info-item {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 0;
-  border-bottom: 1px solid #e2e8f0;
 }
 
-.info-item:last-child {
-  border-bottom: none;
+.header h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: #e6e8f0;
+  margin-bottom: 0;
 }
 
-.info-label {
-  color: #718096;
-  font-size: 14px;
-  font-weight: 500;
+.user-info {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
-.info-value {
-  color: #2d3748;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: right;
-}
-
-/* Стили для полей ввода */
-.input-field {
-  width: 200px;
-  padding: 10px 14px;
-  border: 2px solid #e2e8f0;
+.logout {
+  background: transparent;
+  border: 1px solid #2b3550;
+  color: white;
+  padding: 10px 12px;
   border-radius: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #2d3748;
-  background: #f7fafc;
-  transition: all 0.3s ease;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
 }
 
-.input-field:focus {
-  outline: none;
-  border-color: #667eea;
-  background: white;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+.logout:hover {
+  background: #0b1220;
 }
 
-.input-field::placeholder {
-  color: #a0aec0;
-}
-
-/* Контейнер для кнопок */
-.profile-actions {
+.stats {
   display: flex;
-  gap: 12px;
-  margin-bottom: 20px;
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
-/* Общие стили для кнопок */
-.action-btn {
+.stats div {
+  background: #101a2b;
+  border: 1px solid #222f45;
+  padding: 6px 12px;
+  border-radius: 17px;
+  font-size: 0.95rem;
+}
+
+.main {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.add-task,
+.task-list {
+  background: #0b1220;
+  border: 1px solid #1f293d;
+  border-radius: 14px;
+  padding: 1.5rem;
   flex: 1;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Кнопка Сохранить */
-.save-btn {
-  background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+.add-task {
+  max-width: 370px;
+  height: fit-content;
+  align-self: flex-start;
 }
 
-.save-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+.add-task h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
-.save-btn:active {
-  transform: translateY(0);
+.add-task label {
+  display: block;
+  margin-top: 10px;
+  font-weight: 500;
+  opacity: 50%;
 }
 
-/* Кнопка Изменить */
-.edit-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
-}
-
-.edit-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
-}
-
-.edit-btn:active {
-  transform: translateY(0);
-}
-
-/* Кнопка Выйти */
-.logout-btn {
+.add-task input,
+.add-task select,
+.add-task textarea {
   width: 100%;
-  background: linear-gradient(135deg, #fc8181 0%, #f56565 100%);
+  margin-top: 6px;
+  background: #0b1220;
+  border: 1px solid #2a344b;
   color: white;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.add-task textarea {
+  height: 70px;
+  resize: none;
+}
+
+.add-task .buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.add-task button {
+  flex: 1;
+  background: #69a8ff;
   border: none;
-  padding: 14px 20px;
+  color: black;
+  padding: 0.6rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 600;
+}
+
+.add-task button:hover {
+  background: #3b82f6;
+}
+
+.add-task .cancel {
+  background: #374151;
+}
+.add-task .cancel:hover {
+  background: #303847;
+}
+.inline-inputs {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.inline-inputs div {
+  width: 200px;
+}
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filters button {
+  background: #0b1220;
+  border: 1px solid #2b3550;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 13px;
+  cursor: pointer;
+}
+
+.filters .active {
+  background: #69a8ff;
+  color: #000;
+  font-weight: 600;
+}
+
+.search-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.search-filters input {
+  background: #0b1220;
+  border: 1px solid #2b3550;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+.task-card {
+  background: #0b1220;
+  border: 1px solid #2b3550;
   border-radius: 12px;
-  font-size: 16px;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.9rem;
+}
+
+.task-card.done {
+  opacity: 0.7;
+}
+
+.task-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.task-left h3 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+.task-left .done-text {
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.task-left .meta {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0;
+}
+
+.task-left .notes {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin: 0;
+}
+
+input[type="checkbox" i] {
+  margin-top: 29px;
+}
+
+.task-right {
+  margin-right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.task-right .subject {
+  border: 1px solid #2b3550;
+  padding: 1px 10px;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  opacity: 0.9;
+  color: #57617a;
+  margin-right: 220px;
+}
+
+.task-right .buttons {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 13px;
+  width: 200px;
+}
+
+.task-right .edit {
+  background: transparent;
+  color: white;
+  border: 1px solid #3a445f;
+  border-radius: 12px;
+  padding: 4px 20px;
+  cursor: pointer;
+}
+.task-right .edit:hover {
+  background-color: #ffffff05;
+}
+
+.task-right .delete {
+  background: #69a8ff;
+  border: none;
+  border-radius: 11px;
+  color: black;
+  font-weight: 700;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+.task-right .delete:hover {
+  background-color: #3b82f6;
+}
+
+.empty {
+  border: 1px solid #2b3550;
+  font-style: italic;
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0.7;
+}
+.delete.confirm {
+  background: #dc2626;
+  color: #fff;
+  border: 1px solid #f87171;
+  font-weight: 700;
+}
+
+.confirm-delete {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+  padding: 4px 8px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
 }
 
-.logout-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 101, 101, 0.4);
+.confirm-delete:hover {
+  background: #8e1e1e;
 }
 
-.logout-btn:active {
-  transform: translateY(0);
-}
-
-.status-badge {
-  background: #c6f6d5;
-  color: #276749;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 12px;
+.cancel-delete {
+  background: #374151;
+  color: #fff;
+  border: none;
+  border-radius: 11px;
+  padding: 10px 20px;
   font-weight: 600;
+  cursor: pointer;
 }
 
-/* Адаптивность */
-@media (max-width: 640px) {
+.cancel-delete:hover {
+  background: #4b5563;
+}
+
+/* ---------- Мобильная адаптация ---------- */
+
+@media (max-width: 768px) {
   .profile-container {
-    padding: 15px;
+    padding: 1rem;
   }
 
-  .profile-card {
-    padding: 30px 25px;
-  }
-
-  .info-item {
+  .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 0.6rem;
   }
 
-  .info-value {
-    text-align: left;
+  .header h1 {
+    font-size: 1.8rem;
+    text-align: center;
   }
 
-  .input-field {
-    width: 100%;
-  }
-
-  .profile-actions {
+  .stats {
     flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
   }
 
-  .action-btn {
+  .main {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .add-task {
+    max-width: 100%;
     width: 100%;
+    align-self: center;
+  }
+
+  .task-list {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .filters button {
+    flex: 1 1 calc(50% - 1rem);
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  .search-filters {
+    gap: 0.5rem;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .task-left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+  }
+
+  .task-right {
+    width: 100%;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+
+  .task-right .subject {
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+
+  .task-right .buttons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  input[type="checkbox" i] {
+    margin-top: 5px;
+  }
+
+  .inline-inputs {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .inline-inputs div {
+    width: 100%;
+  }
+
+  .add-task button {
+    padding: 0.5rem;
+  }
+
+  .filters button,
+  .task-right .edit,
+  .task-right .delete {
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 }
